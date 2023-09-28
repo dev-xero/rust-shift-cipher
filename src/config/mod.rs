@@ -1,3 +1,4 @@
+#[derive(Debug, PartialEq)]
 pub struct Config {
     pub text: String,
     pub shift: i8,
