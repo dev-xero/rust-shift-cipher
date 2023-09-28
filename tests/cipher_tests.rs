@@ -37,3 +37,13 @@ fn test_encrypt_with_invalid_string() {
     cipher::encrypt(&String::from("こんにちは"), 8, alphabet)
         .unwrap();
 }
+
+#[test]
+fn test_decrypt() {
+    let decrypted_text = "password";
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let test = cipher::decrypt(&String::from("xiaaewzl"), 8, alphabet)
+        .unwrap();
+
+    assert_eq!(decrypted_text, test);
+}
