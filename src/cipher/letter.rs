@@ -32,7 +32,7 @@ pub fn decrypt(letter: char, shift: i8, alphabet: &str) -> Result<char, &'static
         .position(|ch| ch == letter.to_ascii_lowercase())
         .ok_or("Letter not found in the alphabet.")?;
 
-    let shifted_idx = (idx - shift as usize) % 26;
+    let shifted_idx = (idx + 26 - shift as usize) % 26;
 
     let shifted_letter = alphabet
         .chars()
