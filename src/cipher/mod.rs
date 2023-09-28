@@ -1,5 +1,5 @@
-pub mod letter;
-pub mod digit;
+mod letter;
+mod digit;
 
 pub fn encrypt(text: String, shift: i8, alphabet: &str) -> Result<String, &'static str> {
     let mut encrypted_text = String::with_capacity(text.len());
