@@ -10,7 +10,7 @@ Due to its uncomplicated nature, it proves particularly useful for safeguarding 
 
 Two arguments must be supplied to the program in order for it to work,
 1. The text, you want to encrypt, and
-2. The shift distance
+2. The shift distance (positive)
 
 The last argument, `-e` is optional, when set, the program will write the result of a successful encryption to a plain text file named: `decryption_key_[encrypted text]-[shift distance].txt`. Which contains the encrypted text and the negative shift distance to decrypt the text.
 
