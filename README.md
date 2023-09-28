@@ -1,5 +1,6 @@
 # Rust Shift Cipher
 A shift cipher (or caesar cipher) is a fundamental cryptographic algorithm based on the concept of shifting the letters in a word by a specified number of times for encryption.  
+
 Due to its uncomplicated nature, it proves particularly useful for safeguarding simple passwords and tokens.
 
 ## Usage
