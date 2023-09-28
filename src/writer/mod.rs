@@ -5,7 +5,8 @@ use std::path::Path;
 pub fn write_result(result: String, shift: &i8) -> Result<(), String> {
     let file_path = format!("./encrypted/decryption_key_{result}-{shift}.txt");
     let parent_dir = Path::new(&file_path).parent().unwrap();
-    
+    let content = format!("encrypted: {result}\nkey: -{shift}");
+
     if !parent_dir.exists() {
         match std::fs::create_dir_all(parent_dir) {
             Ok(_) => println!("Created directories successfully."),
@@ -18,7 +19,7 @@ pub fn write_result(result: String, shift: &i8) -> Result<(), String> {
         Err(e) => return Err(format!("Failed to write file to path: {}, error: {}", file_path, e))
     };
 
-    match file.write_all(result.as_bytes()) {
+    match file.write_all(content.as_bytes()) {
         Ok(_) => {
             println!("File written successfully to {}", file_path);
             return Ok(())
