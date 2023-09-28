@@ -1,6 +1,6 @@
 use std::{env, process::exit};
 
-use rust_shift_cipher::Config;
+use crate::Config;
 
 fn main() {
     let config = Config::build(env::args())
