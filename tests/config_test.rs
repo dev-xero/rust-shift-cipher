@@ -3,7 +3,8 @@ use rust_shift_cipher::Config;
 #[test]
 fn test_build_config() {
     let args = vec![
-        String::from("cmd"), 
+        String::from("cmd"),
+        String::from("-en"),
         String::from("password"), 
         String::from("8"),
     ];
@@ -14,6 +15,7 @@ fn test_build_config() {
     assert_eq!(config, Config {
         text: String::from("password"),
         shift: 8,
+        should_decrypt: false,
         should_export: false
     })
 }
@@ -22,6 +24,7 @@ fn test_build_config() {
 fn test_build_config_with_export() {
     let args = vec![
         String::from("cmd"), 
+        String::from("-en"),
         String::from("password"), 
         String::from("8"),
         String::from("-e")
@@ -33,6 +36,7 @@ fn test_build_config_with_export() {
     assert_eq!(config, Config {
         text: String::from("password"),
         shift: 8,
+        should_decrypt: false,
         should_export: true
     })
 }
@@ -41,6 +45,7 @@ fn test_build_config_with_export() {
 fn test_build_config_with_invalid_export_arg() {
     let args = vec![
         String::from("cmd"), 
+        String::from("-en"),
         String::from("password"), 
         String::from("8"),
         String::from("-export")
@@ -52,6 +57,7 @@ fn test_build_config_with_invalid_export_arg() {
     assert_eq!(config, Config {
         text: String::from("password"),
         shift: 8,
+        should_decrypt: false,
         should_export: false
     })
 }

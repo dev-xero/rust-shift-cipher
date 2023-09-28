@@ -2,6 +2,7 @@
 pub struct Config {
     pub text: String,
     pub shift: i8,
+    pub should_decrypt: bool,
     pub should_export: bool
 }
 
@@ -11,6 +12,15 @@ impl Config {
         T: Iterator<Item = String>
     {
         args.next();
+
+        let should_decrypt = match args.next() {
+            Some(arg) => match arg.as_str() {
+                "-en" => false,
+                "-de" => true,
+                _ => return Err("Only one of '-en' or '-de' should be provided.")
+            }
+            None => return Err("-en or -de must be supplied.") 
+        };
 
         let text = match args.next() {
             Some(arg) => arg,
@@ -33,6 +43,7 @@ impl Config {
         };
 
         Ok(Config {
+            should_decrypt,
             text,
             shift,
             should_export
