@@ -69,6 +69,16 @@ fn test_decrypt_digits_only() {
 }
 
 #[test]
+fn test_decrypt_single_text() {
+    let decrypted_text = "a";
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    let test = cipher::decrypt(&String::from("a"), 26, alphabet)
+        .unwrap();
+
+    assert_eq!(decrypted_text, test);
+}
+
+#[test]
 #[should_panic]
 fn test_decrypt_with_invalid_string() {
     let alphabet = "abcdefghijklmnopqrstuvwxyz";
