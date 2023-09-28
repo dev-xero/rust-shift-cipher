@@ -1,7 +1,7 @@
 pub struct Config {
-    text: String,
-    shift: i8,
-    should_export: bool
+    pub text: String,
+    pub shift: i8,
+    pub should_export: bool
 }
 
 impl Config {
