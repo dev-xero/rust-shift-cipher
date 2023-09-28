@@ -15,7 +15,6 @@ Three arguments must be supplied to the program in order for it to work,
 
 The last argument, `-e` is optional, when set, the program will write the result of a successful encryption to a plain text file named: `decryption_key_[encrypted text]-[shift distance].txt` stored in a directory called "encrypted". Which contains the encrypted text and the negative shift distance to decrypt the text.
 
-> [!NOTE]
 > The flag is ignored when `-de` is used.
 
 ## Example
