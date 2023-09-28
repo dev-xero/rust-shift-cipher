@@ -15,6 +15,9 @@ Three arguments must be supplied to the program in order for it to work,
 
 The last argument, `-e` is optional, when set, the program will write the result of a successful encryption to a plain text file named: `decryption_key_[encrypted text]-[shift distance].txt` stored in a directory called "encrypted". Which contains the encrypted text and the negative shift distance to decrypt the text.
 
+> [!NOTE]
+> The flag is ignored when `-de` is used.
+
 ## Example
 Assume we have some password we want to encrypt, as a result of our clever thinking, we come up with `password` (don't ever use "password" as a password, at least without encrypting it), applying the shift cipher algorithm to it using a shift distance of `8`, we get:
 - Original: `p` `a` `s` `s` `w` `o` `r` `d`
