@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::Write;
 
-pub fn write_result(result: String, shift: i8) -> Result<(), String> {
+pub fn write_result(result: String, shift: &i8) -> Result<(), String> {
     let file_path = format!("encrypted/decryption_key_{result}-{shift}.txt");
     let mut file = match File::create(&file_path) {
         Ok(file) => file,
